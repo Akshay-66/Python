@@ -1,6 +1,65 @@
 
 
 
+# a = 1
+# j = 0
+# x = int(input())
+# b = x-1
+# q = b
+# for i in range(x):
+#     j = x
+#     z = q
+#     while j > 0:
+#         while z > 0:
+#             print("*",end="")
+#             z-=1
+#             j-=1
+#         print(a,end="")
+#         a+=1
+#         j-=1
+#         b-=1
+#     print("\n")
+#     q-=1
+
+
+
+# a = 0
+# while a < 10:
+#         if a==8:
+#             print("Its it")
+#             break
+#         else:
+#             print("its !") 
+
+
+# import re
+# #a = "Hello im checking whether its working || not"
+# a = "The rain in India"
+# x = re.search("India",a)
+# if x:
+#     print("s")
+# else:
+#     print("no")
+
+##String to list and list to tuple and dictionary
+# a = "Vilasavathi"
+# x = [i for i in a]
+# y = tuple(x)
+# z = set(x)
+# print(y, z)
+
+##String to list
+# a = [i for i in "Sujatha"]
+# print(a)
+
+##Dictionary
+# a = {"Dom":{"Dan":{"Dab": "Hello","Dib":"Bye"}}}
+# print(a["Dom"]["Dan"]["Dib"])
+
+
+# #format
+# a = "Akshay"
+# print(f"This is {a}")
 
 # ##Upper case and Lower case
 # a = 'Hello'
