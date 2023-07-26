@@ -1,0 +1,86 @@
+CPP17 9-Jun-2023 22:16  ARAVIND K (354789) 0 0 1759
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    int a[n][n],ctr=1,lim=((n+1)*n)/2,u=0,d=n-1,l=0,r=0;
+    while(ctr<=lim){
+        int i,j;
+        for(i=u,j=r;i<=d;i++,j++){
+            a[i][j]=ctr++;
+        }
+        j-=2;
+        for(;j>=l;j--){
+            a[d][j]=ctr++;
+        }
+        for(j=l,i=d-1;i>u;i--){
+            a[i][l]=ctr++;
+        }
+        l++;
+        u+=2;
+        d--;
+        r++;
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<=i;j++){
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+
+}
+Java 9-Jun-2023 22:19  VARSHA V (358549) 0 0 1305
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Your Code Here
+		Scanner sc = new Scanner(System.in);
+		int n=sc.nextInt();
+		int mat[][] = new int[n][n];
+		int m=1, r=n-1, c=n-1,k=0, l=0;
+		
+		while(k<=c && l<=r){
+		  //  for(int i=l;i<=r;i++){
+		  //      mat[i][k]=m++;
+		  //  }
+		  //  k++; l++;
+		  //  for(int i=k;i<=c;i++){
+		  //      mat[r][i]=m++;
+		  //  }
+		  //  r--; c--;
+		    int u=l, v=k;
+		    while(u<=r && v<=c){
+		        mat[u][v]=m++;
+		        u++; v++;
+		    }
+		    l++;c--;
+		    
+		    for(int i=c;i>=k;i--){
+		        mat[r][i]=m++;
+		    }
+		    r--; c--;
+		    
+		    for(int i=r; i>=l; i--){
+		        mat[i][k]=m++;
+		    }
+		    k++; l++;
+		    
+		}
+		
+		
+		
+		for(int i=0;i<n;i++){
+		    for(int j=0;j<i+1;j++){
+		        System.out.print(mat[i][j]+" ");
+		    }
+		    System.out.println();
+		}
+
+	}
+}

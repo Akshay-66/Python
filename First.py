@@ -1,4 +1,326 @@
+# 3 4 
+# 1 2 4 1 
+# 6 3 2 2 
+# 4 1 3 2 
+# 100 
 
+#read the input for R and C
+R, C = map(int, input().split())
+
+#initialize a matrix to store the input values
+matrix = []
+
+#loop through the R rows
+for _ in range(R):
+  #read the C values and append them to the matrix as a list
+  matrix.append(list(map(int, input().split())))
+
+#read the input for K
+K = int(input())
+
+#initialize a variable to store the count of submatrices
+count = 0
+
+#loop through the possible values of M from 2 to R
+for M in range(2, R+1):
+  #loop through the possible values of N from 2 to C
+  for N in range(2, C+1):
+    #initialize a variable to store the product of the submatrix
+    product = 1
+    #loop through the M rows of the submatrix starting from the top-left element
+    for i in range(M):
+      #loop through the N columns of the submatrix starting from the top-left element
+      for j in range(N):
+        #multiply the product by the current element of the submatrix
+        product *= matrix[i][j]
+    #if the product is less than or equal to K, increment the count by 1
+    if product <= K:
+      count += 1
+
+#print the count of submatrices as the output
+print(count)
+
+# Print the count of invalid instructions
+# print(C)
+
+
+
+# a2,b2,c1,c2,d1,d2 = 0
+# if((((b1<=a1 and b2<=c1)or(b1>=c1 and b1>=a1)) and((b2<=a2 and b2<=c2) or(b2>=a2 and b2>=c2))) and(((d1<=a1 and d1<=c1)or(d1>=c1 and d1>=a1)) and((d2<=a2 and d2<=c2) or(d2>=a2 and d2>=c2)))):
+#     flag=1
+# if((((a1<=b1 and a1<=d1)or(a1>=b1 and a1>=d1)) and((a2<=b2 and a2<=d2)or(a2>=b2 and a2>=d2))) and(((c1<=b1 and c1<=d1)or(c1>=b1 and c1>=d1)) and((c2<=b2 and b2<=d2)or(c2>=b2 and c2>=d2)))):
+#     flag1=1
+
+# abcdefghijks1 = input().strip()
+# s2 = input().strip()
+# m = list(s1)
+# n = list(s2)
+# le = min(len(m),len(n))
+# # if le%2!=0:
+# #     le-=1
+# for i in range(0,le,2):
+#     if i+1<len(m) and i+1<len(n):
+#         m[i],m[i+1],n[i],n[i+1] = n[i+1],n[i],m[i+1],m[i]
+# if(len(n)%2!=0):
+#     f = n.index(n[-1])
+#     n[f],m[f] = m[f],n[f]
+# print(*m,sep='')
+# print(*n,sep='')
+# a = ""
+# b = ""
+# x = 0
+# y = 0
+# if(len(s1)%2!=0):
+#     x = len(s1)-1
+# else:
+#     x = len(s1)
+# if len(s2)%2!=0:
+#     y = len(s2)-1
+# else:
+#     y = len(s2)
+# w = 0
+# t = 0
+# if x<y:
+#     w = x
+#     t = 1
+# else:
+#     w = y
+# for i in range(0,w,2):
+#     m,n = s1[i+1],s1[i]
+#     a += m + n
+# for i in range(0,w,2):
+#     m,n = s2[i+1],s2[i]
+#     b += m + n
+# if(len(s1)==len(s2)):
+#     if len(s1)%2!=0:
+#         a += s2[-1]
+#     if len(s2)%2!=0:
+#         b += s1[-1]
+# else:
+#     # if t==0:
+#     a += s1[w:]
+#     b += s2[w:]
+#     # else:
+#     #     b += s2[w:]
+# if (len(s1)==1):
+#     print(s2)
+#     print(s1)
+# else:
+#     print(b)
+#     print(a)
+
+# int a,b,c;
+# char x,y;
+# scanf(%d%c%d%c%d, &a, &x, &b, &y, &c);
+# if (x=='=' && y=='=') {
+#     printf("Valid");
+# } else if (x=='+' || y=='+') {
+#     if(x=='+') {
+#         if (a+b==c) {
+#             printf("Valid");
+#         } else {
+#             printf("Invalid");
+#         }
+#     } else {
+#         if (b+c==a) {
+#             printf("Valid");
+#         } else {
+#             printf("Invalid");
+#         }
+#     }
+# } else if (x=='-' || y=='-') {
+#     if(x=='-') {
+#         if (a-b==c) {
+#             printf("Valid");
+#         } else {
+#             printf("Invalid");
+#         }
+#     } else {
+#         if (b-c==a) {
+#             printf("Valid");
+#         } else {
+#             printf("Invalid");
+#         }
+#     }
+# } else if (x=='*' || y=='*') {
+#     if(x=='*') {
+#         if (a*b==c) {
+#             printf("Valid");
+#         } else {
+#             printf("Invalid");
+#         }
+#     } else {
+#         if (b*c==a) {
+#             printf("Valid");
+#         } else {
+#             printf("Invalid");
+#         }
+#     }
+# } else if (x=='%' || y=='%') {
+#     if(x=='%') {
+#         if (a%b==c) {
+#             printf("Valid");
+#         } else {
+#             printf("Invalid");
+#         }
+#     } else {
+#         if (b%c==a) {
+#             printf("Valid");
+#         } else {
+#             printf("Invalid");
+#         }
+#     }
+# } else {
+#     printf("Invalid");
+# }
+
+
+# string = input().strip()
+# dup = list(set(string))
+# q = 0
+# for i in dup:
+#     x = string.index(i)
+#     y = 0
+#     for j in range(x,len(string)):
+#         if string[j] == i:
+#             y = j
+#     if q < y-x:
+#         q = y-x
+# print(q-1)
+# a,b,x = map(int,input().strip().split())
+# mat = []
+# for i in range(a):
+#     ro = list(map(int,input().strip().split()))
+#     mat.append(ro)
+# for i in mat:
+#     for _ in range(x):
+#         for j in i:
+#             for k in range(x):
+#                 print(j,end=' ')
+#         print()
+
+
+# def unit(n):
+#     return str(n)[-1]
+# x = int(input())
+# li = list(map(int,input().strip().split()))
+# li.sort(reverse = True)
+# li.sort(key = unit,reverse = True)
+# print(*li)
+
+
+# def sqrn(n):
+#     for i in range(n):
+#         yield i**2
+# for i in sqrn(8):
+#     print(i)
+
+
+# from collections import Counter
+# st = input().strip()
+# num = int(input())
+# # q = [0] * 26
+# # for i in st:
+# #     ind = ord(i) - ord('a')
+# #     q[ind] += 1
+# q = Counter(st)
+# ns = ""
+# rc = False
+# for i in st:
+#     # i = ord(ch) - ord('a')
+#     if q[i] >= num:
+#         ns += i
+#     elif q[i]==num:
+#         rc = True
+#         q[i] -= 1
+# x = ns if rc else st if num==1 else "-1"
+# print(x)
+
+# import re
+# msg = "Hey mom,your birthday is on 03.05.rama"
+# pa = r'\d{2}.\d{2}.\s'
+# print(re.findall(pa,msg))
+
+# x = open('Hey Everyone.txt','r')
+# print(x.read(20))
+# x.close()
+
+# from collections import Counter
+# we = ['b','a','s']
+# z = 0
+# li = []
+# x = "akshaymomsujathaakshaybalajibalaje"
+# y = Counter(x)
+# for i in y:
+#     if i in we:
+#         li.append(y[i])
+#         z += y[i]
+# #z = sum(y.values())
+# print(z,li,y)
+
+# from IPython.display import Image
+# Image('https://venturebeat.com/wp-content/uploads/2018/09/ironman.jpg')
+
+# from functools import reduce
+# x = [2,342,4,3,52]
+# g = reduce(lambda a,b: a-b,x)
+# print(g)
+
+# def hey():
+#     while True:
+#         try:
+#             x = int(input())
+#             y = int(input())
+#         except:
+#             print("hare babre ka batcha")
+#         else:
+#             print("!thesh bandhar")
+#         finally:
+#             print('eheh')
+#             print(x+yrf)
+# hey()
+
+
+
+# for i in range(2):
+#     try:
+#         printf(i)
+#     except NameError as er:
+#         print("I Got you {0}".format(str(er.args[0])))
+
+
+# import test
+# int1 = test.a
+# int2 = test.b
+# test.akshay()
+# print(int1+int2)
+
+# def fop(xx):
+#     for i in range(xx):
+#         yield xx * 8
+# for x in fop(10):
+#     # print(x)
+#     m = 'p'
+#     # print(x//8)
+
+# def fop():
+#     for i in range(x):
+#         yield i * 8
+# xx  = fop()
+# for i in range(10):
+#     print(next(xx))
+
+# def decoratorFunc(cce):
+#     def hii():
+#         print('hi')
+#         cce()
+#         print('vanakam')
+#     return hii
+# def hello():
+#     print('Hello boys how are you da 3nre varthi ILU than')
+
+# hello = decoratorFunc(hello)
+# hello()
 
 # def hey(q):
 #     def you(w):
